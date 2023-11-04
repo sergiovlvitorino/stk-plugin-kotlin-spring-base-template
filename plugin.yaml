@@ -4,7 +4,7 @@ metadata:
   name: plugin-kotlin-spring-base-template
   display-name: plugin-kotlin-spring-base-template
   description: plugin inicial para aplicações kotlin e spring
-  version: 0.0.1
+  version: 1.0.0
   picture: plugin.png
 spec:
   type: app
@@ -19,22 +19,42 @@ spec:
     - Api
   stk-projects-only: false
   inputs:
-    - label: Type name of your resource
-      name: resource
+    - label: Project name
       type: text
-      required: true
-      default: Client
-      pattern: '([A-Z][a-z]+)+'
-      help: 'Inform your resource name (e.g.: Client)'
-    - label: Choose http method of new endpoint
-      name: method
+      name: project_name
+      default: project-name
+      global: true
+      required: false
+    - label: Group Id
       type: text
-      items:
-        - GET
-        - POST
-        - PUT
-        - DELETE
-        - PATCH
-      default: GET
+      name: project_group_id
+      default: br.com.zup
+      global: true
+      required: false
+    - label: Artifact Id
+      type: text
+      name: project_artifact_id
+      global: true
       required: true
-      help: 'Inform the method of the endpoint (e.g.: post or delete)'
+    - label: Version
+      type: text
+      name: version
+      default: 1.0.0
+      global: true
+      required: false
+    - label: Description
+      type: text
+      name: project_description
+      default: Template Project using kotlin, maven and spring boot
+      global: false
+      required: false
+    - label: Main Class
+      type: text
+      name: main_class
+      default: Start
+      global: true
+      required: false
+  global-computed-inputs:
+    "application_name": "{{main_class|replace('-','')|replace('.','')|replace('/','')}}"
+    "base_package": "{{project_group_id}}.{{project_artifact_id}}"
+    "package_dir": "{{base_package|replace('.','/')}}"
