@@ -4,7 +4,7 @@ metadata:
   name: plugin-kotlin-spring-base-template
   display-name: plugin-kotlin-spring-base-template
   description: plugin inicial para aplicações kotlin e spring
-  version: 1.0.0
+  version: 1.0.1
   picture: plugin.png
 spec:
   type: app
