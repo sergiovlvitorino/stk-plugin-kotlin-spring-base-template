@@ -4,7 +4,7 @@ metadata:
   name: plugin-kotlin-spring-base-template
   display-name: plugin-kotlin-spring-base-template
   description: plugin inicial para aplicações kotlin e spring
-  version: 1.0.1
+  version: 1.0.2
   picture: plugin.png
 spec:
   type: app
@@ -30,7 +30,7 @@ spec:
     - label: Group Id
       type: text
       name: project_group_id
-      default: br.com.zup
+      default: br.com.vitorino
       global: true
       required: false
     - label: Artifact Id
